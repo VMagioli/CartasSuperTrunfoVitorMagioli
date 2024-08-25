@@ -3,7 +3,7 @@
 
 int main(){
     char estado1[20], estado2[20], estado3[20], estado4[20];
-    char cod1[3], cod2[3], cod3[3], cod4[3];
+    char cod1[4], cod2[4], cod3[4], cod4[4];
     char cidadeA[20], cidadeB[20], cidadeC[20], cidadeD[20];
     unsigned long int populacao1, populacao2, populacao3, populacao4;
     float area1, area2, area3, area4;
@@ -53,7 +53,7 @@ int main(){
 
     printf("Estado: %s\n", estado1);
     printf("Código da Carta: %s\n", cod1);
-    printf("%s tem uma população de %.3lu \n", cidadeA, populacao1);
+    printf("%s tem uma população de %lu \n", cidadeA, populacao1);
     printf("a área total é de %.3f km²\n", area1);
     printf("o PIB que a cidade possui é de %.3lf bilhões \n", PIB1);
     printf("A densidade populacional é: %.3lf \n", densidade1);
@@ -77,7 +77,10 @@ int main(){
     printf("Digite o Nome da Segunda Cidade: \n");
     fgets(cidadeB, sizeof(cidadeB), stdin);
     cidadeB[strcspn(cidadeB, "\n")] = 0; // Remove a nova linha
-
+    
+    // Limpar o buffer de entrada
+    while ((getchar()) != '\n');
+    
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao2);
 
@@ -129,6 +132,9 @@ int main(){
     fgets(cidadeC, sizeof(cidadeC), stdin);
     cidadeC[strcspn(cidadeC, "\n")] = 0; // Remove a nova linha
 
+    // Limpar o buffer de entrada
+    while ((getchar()) != '\n');
+
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao3);
 
@@ -178,6 +184,9 @@ int main(){
     printf("\nDigite o Nome da Quarta Cidade: \n");
     fgets(cidadeD, sizeof(cidadeD), stdin);
     cidadeD[strcspn(cidadeD, "\n")] = 0; // Remove a nova linha
+
+    // Limpar o buffer de entrada
+    while ((getchar()) != '\n');
 
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao4);
