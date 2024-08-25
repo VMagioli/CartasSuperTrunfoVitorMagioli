@@ -3,13 +3,14 @@
 
 int main(){
     char estado1[20], estado2[20], estado3[20], estado4[20];
-    char cod1[4], cod2[4], cod3[4], cod4[4];
+    char cod1[5], cod2[5], cod3[5], cod4[5];
     char cidadeA[20], cidadeB[20], cidadeC[20], cidadeD[20];
     unsigned long int populacao1, populacao2, populacao3, populacao4;
     float area1, area2, area3, area4;
-    double PIB1, PIB2, PIB3, PIB4;
-    double densidade1, densidade2, densidade3, densidade4;
-    double pibper1,pibper2, pibper3, pibper4;
+    float PIB1, PIB2, PIB3, PIB4;
+    float densidade1, densidade2, densidade3, densidade4;
+    float pibper1,pibper2, pibper3, pibper4;
+    float superpoder1, superpoder, superpoder3, superpoder4;
     int pontos1, pontos2, pontos3, pontos4;
 
     //início do primeiro estado
@@ -24,23 +25,20 @@ int main(){
     printf("Digite o Nome da Cidade: \n");
     fgets(cidadeA, sizeof(cidadeA), stdin);
     cidadeA[strcspn(cidadeA, "\n")] = 0; // Remove a nova linha
-
-    // Limpar o buffer de entrada
-    while ((getchar()) != '\n');
-
+    
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao1);
 
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade (km²): \n");
+    printf("Digite a área da cidade: \n");
     scanf("%f", &area1);
 
     while ((getchar()) != '\n');
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%lf", &PIB1);
+    scanf("%f", &PIB1);
     
     while ((getchar()) != '\n');
     
@@ -53,11 +51,12 @@ int main(){
 
     printf("Estado: %s\n", estado1);
     printf("Código da Carta: %s\n", cod1);
-    printf("%s tem uma população de %lu \n", cidadeA, populacao1);
+    printf("Cidade: %s \n", cidadeA);
+    printf("Número da população: %lu \n", populacao1);
     printf("a área total é de %.3f km²\n", area1);
-    printf("o PIB que a cidade possui é de %.3lf bilhões \n", PIB1);
-    printf("A densidade populacional é: %.3lf \n", densidade1);
-    printf("O PIB per capita é: %.3lf \n", pibper1);
+    printf("o PIB que a cidade possui é de %.3f \n", PIB1);
+    printf("A densidade populacional é: %.3f \n", densidade1);
+    printf("O PIB per capita é: %.3f \n", pibper1);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos1);
    
     //fim do primeiro estado
@@ -87,13 +86,13 @@ int main(){
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade (km²): \n");
+    printf("Digite a área da cidade: \n");
     scanf("%f", &area2);
 
     while ((getchar()) != '\n');
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%lf", &PIB2);
+    scanf("%f", &PIB2);
     
     while ((getchar()) != '\n');
     
@@ -108,9 +107,9 @@ int main(){
     printf("Código da Carta: %s\n", cod2);
     printf("A %s tem uma população de %.3lu \n", cidadeB, populacao2);
     printf("a área total é de %.3f \n", area2);
-    printf("o PIB que a cidade possui é de %.3lf bilhões\n", PIB2);
-    printf("A densidade populacional é: %.3lf \n", densidade2);
-    printf("O PIB per capita é: %.3lf \n", pibper2);
+    printf("o PIB que a cidade possui é de %.3f \n", PIB2);
+    printf("A densidade populacional é: %.3f \n", densidade2);
+    printf("O PIB per capita é: %.3f \n", pibper2);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos2);
 
     //fim da segunda cidade
@@ -141,13 +140,13 @@ int main(){
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade (km²): \n");
+    printf("Digite a área da cidade: \n");
     scanf("%f", &area3);
 
     while ((getchar()) != '\n');
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%lf", &PIB3);
+    scanf("%f", &PIB3);
     
     while ((getchar()) != '\n');
     
@@ -162,9 +161,9 @@ int main(){
     printf("Código da Carta: %s\n", cod3);
     printf("A %s tem uma população de %.3lu \n", cidadeC, populacao3);
     printf("a área total é de %.3f \n", area3);
-    printf("o PIB que a cidade possui é de %.3lf bilhões\n", PIB3);
-    printf("A densidade populacional é: %.3lf\n", densidade3);
-    printf("O PIB per capita é: %.3lf\n", pibper3);
+    printf("o PIB que a cidade possui é de %.3f\n", PIB3);
+    printf("A densidade populacional é: %.3f\n", densidade3);
+    printf("O PIB per capita é: %.3f\n", pibper3);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos3);
     
     //fim da terceira cidade
@@ -194,13 +193,13 @@ int main(){
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade (km²): \n");
+    printf("Digite a área da cidade: \n");
     scanf("%f", &area4);
 
     while ((getchar()) != '\n');
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%lf", &PIB4);
+    scanf("%f", &PIB4);
     
     while ((getchar()) != '\n');
     
@@ -215,9 +214,9 @@ int main(){
     printf("Código da Carta: %s\n", cod4);
     printf("A %s tem uma população de %.3lu \n", cidadeD, populacao4);
     printf("a área total é de %.3f \n", area4);
-    printf("o PIB que a cidade possui é de %.3lf bilhões\n", PIB4);
-    printf("A densidade populacional é: %.3lf\n", densidade4);
-    printf("O PIB per capita é: %.3lf\n", pibper4);
+    printf("o PIB que a cidade possui é de %.3f\n", PIB4);
+    printf("A densidade populacional é: %.3f\n", densidade4);
+    printf("O PIB per capita é: %.3f\n", pibper4);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos4);
     //fim da quarta cidade
 
