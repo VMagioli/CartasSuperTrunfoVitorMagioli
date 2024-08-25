@@ -2,6 +2,8 @@
 #include <string.h>
 
 int main(){
+    char estado1[20], estado2[20], estado3[20], estado4[20];
+    char cod1[3], cod2[3], cod3[3], cod4[3];
     char cidadeA[20], cidadeB[20], cidadeC[20], cidadeD[20];
     float populacao1, populacao2, populacao3, populacao4;
     float area1, area2, area3, area4;
@@ -10,9 +12,16 @@ int main(){
     double pibper1,pibper2, pibper3, pibper4;
     int pontos1, pontos2, pontos3, pontos4;
 
-    //início da primeira cidade
+    //início do primeiro estado
+    printf("Digite o Nome do Primeiro Estado: \n");
+    fgets(estado1, sizeof(estado1), stdin);
+    estado1[strcspn(estado1, "\n")] = 0; // Remove a nova linha
 
-    printf("Digite o Nome da Primeira Cidade: \n");
+    printf("Digite o código da cidade (Ex: A01, B02): \n");
+    fgets(cod1, sizeof(cod1), stdin);
+    cod1[strcspn(cod1, "\n")] = 0; // Remove a nova linha
+
+    printf("Digite o Nome da Cidade: \n");
     fgets(cidadeA, sizeof(cidadeA), stdin);
     cidadeA[strcspn(cidadeA, "\n")] = 0; // Remove a nova linha
 
@@ -39,19 +48,30 @@ int main(){
 
     pibper1 = PIB1 / populacao1; //calcula PIB per capita;
 
+    printf("Estado: %s\n", estado1);
+    printf("Código da Carta: %s\n", cod1);
     printf("%s tem uma população de %.3f \n", cidadeA, populacao1);
     printf("a área total é de %.3f km²\n", area1);
-    printf("o PIB que a cidade possui é de %.3lf \n", PIB1);
+    printf("o PIB que a cidade possui é de %.3lf bilhões \n", PIB1);
     printf("A densidade populacional é: %.3lf \n", densidade1);
     printf("O PIB per capita é: %.3lf \n", pibper1);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos1);
    
-    //fim da primeira cidade
+    //fim do primeiro estado
     
     while ((getchar()) != '\n');
 
+    //início do segundo estado
+    printf("\nDigite o Nome do Segundo Estado: \n");
+    fgets(estado2, sizeof(estado2), stdin);
+    estado2[strcspn(estado2, "\n")] = 0; // Remove a nova linha
+
+    printf("Digite o código da cidade (Ex: A01, B02): \n");
+    fgets(cod2, sizeof(cod2), stdin);
+    cod2[strcspn(cod2, "\n")] = 0; // Remove a nova linha
+
     //início da segunda cidade
-    printf("\nDigite o Nome da Segunda Cidade: \n");
+    printf("Digite o Nome da Segunda Cidade: \n");
     fgets(cidadeB, sizeof(cidadeB), stdin);
     cidadeB[strcspn(cidadeB, "\n")] = 0; // Remove a nova linha
 
@@ -61,7 +81,7 @@ int main(){
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade: \n");
+    printf("Digite a área da cidade (km²): \n");
     scanf("%f", &area2);
 
     while ((getchar()) != '\n');
@@ -78,9 +98,11 @@ int main(){
 
     pibper2 = PIB2 / populacao2; //calcula PIB per capita;
 
+    printf("Estado: %s\n", estado2);
+    printf("Código da Carta: %s\n", cod2);
     printf("A %s tem uma população de %.3f \n", cidadeB, populacao2);
     printf("a área total é de %.3f \n", area2);
-    printf("o PIB que a cidade possui é de %.3lf \n", PIB2);
+    printf("o PIB que a cidade possui é de %.3lf bilhões\n", PIB2);
     printf("A densidade populacional é: %.3lf \n", densidade2);
     printf("O PIB per capita é: %.3lf \n", pibper2);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos2);
@@ -88,6 +110,15 @@ int main(){
     //fim da segunda cidade
 
     while ((getchar()) != '\n');
+
+    //início do terceiro estado
+    printf("\nDigite o Nome do Terceiro Estado: \n");
+    fgets(estado3, sizeof(estado3), stdin);
+    estado3[strcspn(estado3, "\n")] = 0; // Remove a nova linha
+
+    printf("Digite o código da cidade (Ex: A01, B02): \n");
+    fgets(cod3, sizeof(cod3), stdin);
+    cod3[strcspn(cod3, "\n")] = 0; // Remove a nova linha
 
     //início da terceira cidade
 
@@ -101,7 +132,7 @@ int main(){
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade: \n");
+    printf("Digite a área da cidade (km²): \n");
     scanf("%f", &area3);
 
     while ((getchar()) != '\n');
@@ -118,9 +149,11 @@ int main(){
 
     pibper3 = PIB3 / populacao3; //calcula PIB per capita;
 
+    printf("Estado: %s\n", estado3);
+    printf("Código da Carta: %s\n", cod3);
     printf("A %s tem uma população de %.3f \n", cidadeC, populacao3);
     printf("a área total é de %.3f \n", area3);
-    printf("o PIB que a cidade possui é de %.3lf \n", PIB3);
+    printf("o PIB que a cidade possui é de %.3lf bilhões\n", PIB3);
     printf("A densidade populacional é: %.3lf\n", densidade3);
     printf("O PIB per capita é: %.3lf\n", pibper3);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos3);
@@ -129,6 +162,15 @@ int main(){
     
     while ((getchar()) != '\n');
     
+    //início do quarto estado
+    printf("\nDigite o Nome do Quarto Estado: \n");
+    fgets(estado4, sizeof(estado4), stdin);
+    estado4[strcspn(estado4, "\n")] = 0; // Remove a nova linha
+
+    printf("Digite o código da cidade (Ex: A01, B02): \n");
+    fgets(cod4, sizeof(cod4), stdin);
+    cod4[strcspn(cod4, "\n")] = 0; // Remove a nova linha
+
      //início da quarta cidade
     printf("\nDigite o Nome da Quarta Cidade: \n");
     fgets(cidadeD, sizeof(cidadeD), stdin);
@@ -140,7 +182,7 @@ int main(){
     // Limpar o buffer de entrada
     while ((getchar()) != '\n');
     
-    printf("Digite a área da cidade: \n");
+    printf("Digite a área da cidade (km²): \n");
     scanf("%f", &area4);
 
     while ((getchar()) != '\n');
@@ -157,9 +199,11 @@ int main(){
 
     pibper4 = PIB4 / populacao4; //calcula PIB per capita;
 
+    printf("Estado: %s\n", estado4);
+    printf("Código da Carta: %s\n", cod4);
     printf("A %s tem uma população de %.3f \n", cidadeD, populacao4);
     printf("a área total é de %.3f \n", area4);
-    printf("o PIB que a cidade possui é de %.3lf \n", PIB4);
+    printf("o PIB que a cidade possui é de %.3lf bilhões\n", PIB4);
     printf("A densidade populacional é: %.3lf\n", densidade4);
     printf("O PIB per capita é: %.3lf\n", pibper4);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos4);
