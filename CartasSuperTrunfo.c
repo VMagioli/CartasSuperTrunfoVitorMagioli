@@ -9,8 +9,9 @@ int main(){
     float area1, area2, area3, area4;
     float PIB1, PIB2, PIB3, PIB4;
     float densidade1, densidade2, densidade3, densidade4;
+    float densidadeinvertida1, densidadeinvertida2, densidadeinvertida3, densidadeinvertida4;
     float pibper1,pibper2, pibper3, pibper4;
-    float superpoder1, superpoder, superpoder3, superpoder4;
+    float superpoder1, superpoder2, superpoder3, superpoder4;
     int pontos1, pontos2, pontos3, pontos4;
 
     //início do primeiro estado
@@ -77,9 +78,6 @@ int main(){
     fgets(cidadeB, sizeof(cidadeB), stdin);
     cidadeB[strcspn(cidadeB, "\n")] = 0; // Remove a nova linha
     
-    // Limpar o buffer de entrada
-    while ((getchar()) != '\n');
-    
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao2);
 
@@ -116,6 +114,35 @@ int main(){
 
     while ((getchar()) != '\n');
 
+    /* Inverte a densidade populacional da primeira carta para usar na soma
+    (para favorecimento de menores densidades)*/
+    densidadeinvertida1 = 1 / densidade1;
+    
+    //soma propriedades da primeira carta
+    superpoder1 = (float) populacao1 + area1 + PIB1 + densidadeinvertida1 + pibper1 + (float) pontos1;
+
+    /* Inverte a densidade populacional da primeira carta para usar na soma
+    (para favorecimento de menores densidades)*/
+    densidadeinvertida2 = 1 / densidade2;
+
+    //soma propriedades da segunda carta
+    superpoder2 = (float) populacao2 + area2 + PIB2 + densidadeinvertida2 + pibper2 + (float) pontos2;
+
+    //início da comparação das cartas
+    printf ("Populacao: Carta 1 (%lu) vs Carta 2 (%lu) - Vencedor: %s\n", populacao1, populacao2, populacao1 > populacao2 ? "Carta 1" : "Carta 2");
+
+    printf ("Area: Carta 1 (%.3f) vs Carta 2 (%.3f) - Vencedor: %s\n", area1, area2, area1 > area2 ? "Carta 1" : "Carta 2");
+
+    printf ("PIB: Carta 1 (%.3f) vs Carta 2 (%.3f) - Vencedor: %s\n", PIB1, PIB2, PIB1 > PIB2 ? "Carta 1" : "Carta 2");
+
+    printf ("Pontos Turísticos: Carta 1 (%d) vs Carta 2 (%d) - Vencedor: %s\n", pontos1, pontos2, pontos1 > pontos2 ? "Carta 1" : "Carta 2");
+
+    printf ("Densidade populacional: Carta 1 (%.6f) vs Carta 2 (%.6f) - Vencedor: %s\n", densidadeinvertida1, densidadeinvertida2, densidadeinvertida1 > densidadeinvertida2 ? "Carta 1" : "Carta 2");
+
+    printf ("PiB per capita: Carta 1 (%.3f) vs Carta 2 (%.3f) - Vencedor: %s\n", pibper1, pibper2, pibper1 > pibper2 ? "Carta 1" : "Carta 2");
+
+    printf ("SuperPoder: Carta 1 (%.3f) vs Carta 2 (%.3f) - Vencedor: %s\n", superpoder1, superpoder2, superpoder1 > superpoder2 ? "Carta 1" : "Carta 2");
+
     //início do terceiro estado
     printf("\nDigite o Nome do Terceiro Estado: \n");
     fgets(estado3, sizeof(estado3), stdin);
@@ -125,14 +152,14 @@ int main(){
     fgets(cod3, sizeof(cod3), stdin);
     cod3[strcspn(cod3, "\n")] = 0; // Remove a nova linha
 
+    // Limpar o buffer de entrada
+    while ((getchar()) != '\n');
+
     //início da terceira cidade
 
     printf("\nDigite o Nome da Terceira Cidade: \n");
     fgets(cidadeC, sizeof(cidadeC), stdin);
     cidadeC[strcspn(cidadeC, "\n")] = 0; // Remove a nova linha
-
-    // Limpar o buffer de entrada
-    while ((getchar()) != '\n');
 
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao3);
@@ -179,13 +206,13 @@ int main(){
     fgets(cod4, sizeof(cod4), stdin);
     cod4[strcspn(cod4, "\n")] = 0; // Remove a nova linha
 
+    // Limpar o buffer de entrada
+    while ((getchar()) != '\n');
+
      //início da quarta cidade
     printf("\nDigite o Nome da Quarta Cidade: \n");
     fgets(cidadeD, sizeof(cidadeD), stdin);
     cidadeD[strcspn(cidadeD, "\n")] = 0; // Remove a nova linha
-
-    // Limpar o buffer de entrada
-    while ((getchar()) != '\n');
 
     printf("Digite o número da população: \n");
     scanf("%lu", &populacao4);
@@ -219,6 +246,35 @@ int main(){
     printf("O PIB per capita é: %.3f\n", pibper4);
     printf("e essa cidade possui %d pontos turísticos.\n", pontos4);
     //fim da quarta cidade
+
+/* Inverte a densidade populacional da primeira carta para usar na soma
+    (para favorecimento de menores densidades)*/
+    densidadeinvertida3 = 1 / densidade3;
+    
+    //soma propriedades da primeira carta
+    superpoder3 = (float) populacao3 + area3 + PIB3 + densidadeinvertida3 + pibper3 + (float) pontos3;
+
+    /* Inverte a densidade populacional da primeira carta para usar na soma
+    (para favorecimento de menores densidades)*/
+    densidadeinvertida4 = 1 / densidade4;
+
+    //soma propriedades da segunda carta
+    superpoder4 = (float) populacao4 + area4 + PIB4 + densidadeinvertida4 + pibper4 + (float) pontos4;
+
+    //início da comparação das cartas
+    printf ("Populacao: Carta 3 (%lu) vs Carta 4 (%lu) - Vencedor: %s\n", populacao3, populacao4, populacao3 > populacao4 ? "Carta 3" : "Carta 4");
+
+    printf ("Area: Carta 3 (%.3f) vs Carta 4 (%.3f) - Vencedor: %s\n", area3, area4, area3 > area4 ? "Carta 3" : "Carta 4");
+
+    printf ("PIB: Carta 3 (%.3f) vs Carta 4 (%.3f) - Vencedor: %s\n", PIB3, PIB4, PIB3 > PIB4 ? "Carta 3" : "Carta 4");
+
+    printf ("Pontos Turísticos: Carta 3 (%d) vs Carta 4 (%d) - Vencedor: %s\n", pontos3, pontos4, pontos3 > pontos4 ? "Carta 3" : "Carta 4");
+
+    printf ("Densidade populacional: Carta 3 (%.6f) vs Carta 4 (%.6f) - Vencedor: %s\n", densidadeinvertida3, densidadeinvertida4, densidadeinvertida3 > densidadeinvertida4 ? "Carta 3" : "Carta 4");
+
+    printf ("PiB per capita: Carta 3 (%.3f) vs Carta 4 (%.3f) - Vencedor: %s\n", pibper3, pibper4, pibper3 > pibper4 ? "Carta 3" : "Carta 4");
+
+    printf ("SuperPoder: Carta 3 (%.3f) vs Carta 4 (%.3f) - Vencedor: %s\n", superpoder3, superpoder4, superpoder3 > superpoder4 ? "Carta 3" : "Carta 4");
 
     return 0;
 }
